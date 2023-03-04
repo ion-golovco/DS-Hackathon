@@ -9,9 +9,11 @@ export const Dashboard = () => {
 
   return (
     <div className="min-h-screen">
-      <a href="/" className="flex justify-center py-1 font-bold "> Trackly | DataMunch board</a>
+      <a href="/" className="flex justify-center py-1 font-bold ">
+        Trackly | DataMunch board
+      </a>
 
-      <div className="flex w-full flex-col md:flex-row bg-gradient-to-r to-rose-500 from-blue-900">
+      <div className="flex w-full flex-col md:flex-row bg-gradient-to-r from-rose-500 to-blue-900 pt-2 min-h-[100vh]">
         <div className="md:w-72 w-full bg-slate-100">
           <div className="grid grid-cols-2 bg-slate-200 rounded-r-full mt-4 mr-4 h-22">
             <div className="flex flex-col py-3 pl-4">
@@ -30,7 +32,7 @@ export const Dashboard = () => {
               Dashboard
             </button>
             <button onClick={() => setOpen(1)} className={open && button}>
-              Operators
+              Clients
             </button>
             <div>Analysis</div>
             <div>Links</div>
@@ -38,9 +40,7 @@ export const Dashboard = () => {
           </div>
         </div>
 
-        <div className="w-full bg-slate-100 p-6 min-h-[80vh] mx-0 md:mx-4 mt-4">
-          {open === 0 ? <Dash /> : <Operator />}
-        </div>
+        <div className="w-full bg-slate-100 p-6">{open === 0 ? <Dash /> : <Operator />}</div>
       </div>
     </div>
   );
