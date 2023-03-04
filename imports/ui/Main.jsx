@@ -15,7 +15,7 @@ export const Main = () => {
       <div className=" h-screen grid content-center responsive ">
         <div className="mx-3">
           <h1 className="mb-4 text-3xl text-gray-900 dark:text-white md:text-5xl lg:text-6xl ">
-            <span class="text-transparent bg-clip-text bg-gradient-to-r to-purple-700 from-sky-400 font-display">Better Data</span>{" "}
+            <span class="text-transparent bg-clip-text bg-gradient-to-r to-blue-900 from-rose-600 font-display">Better Data</span>{" "}
             Scalable AI.
           </h1>
           <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
