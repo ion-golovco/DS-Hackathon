@@ -1,48 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
+import Dash from "./Components/Dash";
+import Operator from "./Components/Operator";
 
-const Card = ({ children }) => {
-  return <div className="text-3xl p-4 rounded-[1.5rem] bg-slate-200 text-black h-96">{children}</div>;
-};
-
-
+const button = "font-bold bg-slate-200 shadow-md";
 
 export const Dashboard = () => {
+  const [open, setOpen] = useState(0);
+
   return (
     <div className="min-h-screen">
-            <div className="flex flex-row gap-2 bg-slate-300 w-full h-16">
+      <a href="/" className="flex justify-center py-1 font-bold "> Trackly | DataMunch board</a>
+
+      <div className="flex w-full flex-col md:flex-row bg-gradient-to-r to-purple-700 from-sky-400">
+        <div className="md:w-72 w-full bg-slate-100 md:rounded-tr-[3rem] rounded-none">
+          <div className="grid grid-cols-2 bg-slate-200 rounded-r-full mt-4 mr-4 h-22">
+            <div className="flex flex-col py-3 pl-4">
+              <p className="font-bold">Ivan Turbinca</p>
+              <p className="text-sm">Administrator</p>
+            </div>
             <img
-              className="h-12 w-12 object-cover rounded-full"
+              className="h-16 w-16 object-cover rounded-full self-center ml-6 md:block hidden"
               src="https://i.pinimg.com/736x/d7/71/f2/d771f2b8461bf09e5bb671fca07ad46a--wanna.jpg"
               alt=""
             />
-            <span className="py-3 font-bold pl-4">Your dashboard</span>
           </div>
-      <div className="flex w-full flex-row bg-slate-800">
 
-      <div className="flex flex-row">
-
-      </div>
-
-        <div className="w-72">
-          <div className="flex flex-col gap-4 text-xl mt-4 text-white">
-            <div className="bg-slate-400 px-2 py-3 rounded-r-full">Dashboard</div>
-            <div className="p-2">Operators</div>
-            <div className="p-2">Analysis</div>
-            <div className="p-2">Links</div>
-            <div className="p-2">Settings</div>
+          <div className="flex flex-col text-lg mt-4 text-start [&>*]:py-4 [&>*]:px-4 [&>*]:text-start">
+            <button onClick={() => setOpen(0)} className={!open && button}>
+              Dashboard
+            </button>
+            <button onClick={() => setOpen(1)} className={open && button}>
+              Operators
+            </button>
+            <div>Analysis</div>
+            <div>Links</div>
+            <div>Settings</div>
           </div>
         </div>
 
-
-
-        <div className="w-full bg-slate-300 rounded-[3rem] p-6 min-h-[80vh] mt-4 mr-4">
-          <div className="grid grid-cols-2 gap-4">
-            <Card>AAAAAA</Card>
-            <Card>AAAAAA</Card>
-            <Card>AAAAAA</Card>
-            <Card>AAAAAA</Card>
-            <Card>AAAAAA</Card>
-          </div>
+        <div className="w-full bg-slate-100 rounded-t-[3rem] p-6 min-h-[80vh]  mx-0 md:mx-4 mt-4">
+          {open === 0 ? <Dash /> : <Operator />}
         </div>
       </div>
     </div>
