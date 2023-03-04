@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .responsive {
+      @apply mx-auto w-full max-w-[1512px] xl:px-[150px];
+    }
+}

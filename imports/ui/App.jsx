@@ -1,11 +1,21 @@
-import React from 'react';
-import { Hello } from './Hello.jsx';
-import { Info } from './Info.jsx';
+import {
+  BrowserRouter as Router,
+  Routes as Switch,
+  Route,
+} from "react-router-dom";
 
-export const App = () => (
-  <div>
-    <h1>Welcome to Meteor!</h1>
-    <Hello/>
-    <Info/>
-  </div>
-);
+import React from "react";
+
+import { Main } from "./Main";
+import { Dashboard } from "./Dashboard";
+
+export const App = () => {
+  return (
+    <Router className="App">
+      <Switch>
+        <Route path="/" element={<Main />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Switch>
+    </Router>
+  );
+};
