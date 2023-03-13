@@ -81,54 +81,48 @@ const Operator = () => {
         </Card>
       </div>
       <div className="flex gap-4 flex-col">
-
         <Card className="font-bold ">
           <h1>Factors</h1>
-          <div className="font-normal">
-            Competitiors: {user.competitors}
-          </div>
+          <div className="font-normal">Competitiors: {user.competitors}</div>
 
-          <div className="font-normal">
-            Incidents: {user.incidents}
-          </div>
-          <div className="font-normal">
-            Quantity: {user.qnt_incident}
-          </div>
-          <div className="font-normal">
-            Incident last month: {user.incident_month || ' none'}
-          </div>
-          <div className="font-normal">
-            Solution month: {user.dissolution_month || ' none'}
-          </div>
+          <div className="font-normal">Incidents: {user.incidents}</div>
+          <div className="font-normal">Quantity: {user.qnt_incident || " none"}</div>
+          <div className="font-normal">Incident last month: {user.incident_month || " none"}</div>
+          <div className="font-normal">Solution month: {user.dissolution_month || " none"}</div>
         </Card>
-        
+
         <Card className="font-bold ">
-          <h1>
-            Debt
-          </h1>
-          <div className="font-normal">Amount :{user.payment_sum || ' none'}</div>
-          <div className="font-normal">Period :{user.payment_period || ' none'}</div>
+          <h1>Debt</h1>
+          <div className="font-normal">Amount :{user.payment_sum || " none"}</div>
+          <div className="font-normal">Period :{user.payment_period || " none"}</div>
           <div></div>
         </Card>
 
         <Card className="font-bold ">
-          <h1>
-            Calls
-          </h1>
-          <div className="font-normal">Amount :{user.qnt_calls || ' none'}</div>
-          <div className="font-normal">Last month called :{user.call_month || ' none'}</div>
+          <h1>Calls</h1>
+          <div className="font-normal">Amount :{user.qnt_calls || " none"}</div>
+          <div className="font-normal">Last month called :{user.call_month || " none"}</div>
           <div></div>
         </Card>
 
         <Card className="font-bold ">
-        <div className="flex-row flex justify-between">
+          <div className="flex-row flex justify-between">
             <h1>Chance for churn</h1>
-            <div className="text-green-700">20%</div>
+            <div className="text-green-700">12%</div>
           </div>
+          <div className="font-normal">Unlikely to churn in next 12 months</div>
         </Card>
-
       </div>
 
+      <div className="flex gap-4 flex-col">
+        <Card className="font-bold ">
+          <h1>Action panel</h1>
+          
+          <div className="font-normal text-white bg-amber-500 w-36 p-1 rounded-full text-center mt-4">Message</div>
+          <div className="font-normal text-white bg-green-700 w-36 p-1 rounded-full text-center mt-4">Call now</div>
+          <div className="font-normal text-white bg-rose-600 w-36 p-1 rounded-full text-center mt-4">Send Offer</div>
+        </Card>
+      </div>
     </div>
   );
 };
